@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.example.myutils;
 
 public class MyUtils {
@@ -27,5 +23,40 @@ public class MyUtils {
         return res;
         // Recursivament és més elegant pero així és millor. Comentari afegit per fer justificar un commit
     }
+    
+    public static String invertirCadena (String cadena) {
+        String invertida = "";
+        for (int i = cadena.length() - 1; i >= 0; i--) {
+            invertida += cadena.charAt(i);
+        }
+        return invertida;
+    }
+    
+    public static int extreureMaxim (int[] array) {
+        int maxim = 0;
+        for (int i = 0; i<array.length; i++) {
+            if (array[i]>maxim) {
+                maxim = array[i];
+            }
+        }
+        return maxim;
+    }
+    
+    public static int sumarDigits(int numero) {
+        int suma = 0;
+        while (numero > 0) {
+            int digito = numero % 10;
+            suma += digito;             
+            numero /= 10;               
+        }
+        return suma;
+    }
+    
+    public static int properPrimer(int numero) {
+        int candidat = numero + 1; 
+        while (!esPrimer(candidat)) {
+            candidat++; 
+        }
+        return candidat;
+    }
 }
-
